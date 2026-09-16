@@ -43,7 +43,7 @@
 > When a search returns no matches, a friendly no-results state is displayed with the queried term highlighted and pagination buttons hidden.
 
 <div align="center">
-  <img src="screenshots/error.png" alt="Movie Detail Page" width="850"/>
+  <img src="screenshots/error.png" alt="Movie Error Page" width="850"/>
 </div>
 
 ---

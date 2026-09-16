@@ -114,23 +114,50 @@ nextBtn.addEventListener("click", async () => {
     await loadCurrentPage();
 });
 
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 function displayMovieInfo(data) {
     const moviesContainer = document.querySelector(".movies-container");
     moviesContainer.innerHTML = "";
 
     if (data.results.length === 0) {
+        const queryTerm = currentSearch ? escapeHtml(currentSearch) : "your search";
         moviesContainer.innerHTML = `
             <div class="no-results">
-                <span class="no-results-icon">🎬</span>
+                <div class="no-results-icon-wrap">
+                    <span class="no-results-icon" role="img" aria-label="Movie clapper">🎬</span>
+                </div>
                 <h2 class="no-results-title">No movies found</h2>
-                <p class="no-results-sub">We couldn't find anything matching <strong>"${currentSearch || 'your search'}"</strong>.<br>Double-check the spelling or try a different title.</p>
+                <p class="no-results-sub">We couldn't find anything matching <span class="no-results-query">"${queryTerm}"</span>.</p>
+                <p class="no-results-hint">Double-check the spelling or try searching for another title.</p>
+                <button type="button" class="no-results-btn" id="resetSearchBtn">Explore Trending Movies</button>
             </div>
         `;
         previousBtn.style.display = "none";
         nextBtn.style.display = "none";
+
+        const resetBtn = document.getElementById("resetSearchBtn");
+        if (resetBtn) {
+            resetBtn.addEventListener("click", () => {
+                input.value = "";
+                currentSearch = "";
+                document.querySelectorAll(".genrePill").forEach(btn => btn.classList.remove("active"));
+                const allPill = document.querySelector('.genrePill[data-genre="All"]');
+                if (allPill) allPill.classList.add("active");
+                loadTrendingMovies();
+            });
+        }
         return;
     }
 
+    updatePaginationButtons();
     previousBtn.style.display = "";
     nextBtn.style.display = "";
 
