@@ -16,7 +16,7 @@
 > The hero section with the animated background, search bar, genre pill filters, and trending movie grid.
 
 <div align="center">
-  <img src="screenshots/detail.png" alt="Movie Detail Page" width="850"/>
+  <img src="screenshots/landing.png" alt="Movie Landing Page" width="850"/>
 </div>
 
 ---
@@ -24,21 +24,27 @@
 ### 2. After Searching — Search Results View
 > Search results shown after querying "Avengers" — the movie grid updates live with matching titles.
 
-![Search Results View](screenshots/search.jpg)
+<div align="center">
+  <img src="screenshots/search.png" alt="Movie Search Page" width="850"/>
+</div>
 
 ---
 
 ### 3. Movie Detail View
 > Clicking any movie card navigates to a full detail page with trailer embed, genres, release date, synopsis, and poster.
 
-![Movie Detail View](screenshots/detail.jpg)
+<div align="center">
+  <img src="screenshots/detail.png" alt="Movie Detail Page" width="850"/>
+</div>
 
 ---
 
 ### 4. Error View — No Results Found
 > When a search returns no matches, a friendly no-results state is displayed with the queried term highlighted and pagination buttons hidden.
 
-![Error / No Results View](screenshots/error.jpg)
+<div align="center">
+  <img src="screenshots/error.png" alt="Movie Detail Page" width="850"/>
+</div>
 
 ---
 
