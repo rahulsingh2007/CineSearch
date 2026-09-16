@@ -90,7 +90,6 @@ function displayMovie(movieData, movieTrailer) {
     movieRatingVotes.textContent = `⭐${movieData.vote_average.toFixed(1)}/10 with ${movieData.vote_count} votes`;
     movieRatingVotes.classList.add("movieRatingVotes");
 
-
     movieInfo.appendChild(movieTitle);
     const trailer = createTrailer(movieTrailer);
     if (trailer) {
