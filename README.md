@@ -15,7 +15,9 @@
 ### 1. Initial UI — Landing View
 > The hero section with the animated background, search bar, genre pill filters, and trending movie grid.
 
-![Landing View](screenshots/landing.jpg)
+<div align="center">
+  <img src="screenshots/detail.png" alt="Movie Detail Page" width="850"/>
+</div>
 
 ---
 
