@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieSearch - Premium Film Discovery</title>
+    <meta name="description" content="Search thousands of movies, discover trending films, and explore by genre.">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ── Navbar ── -->
+    <header class="navigation">
+        <div class="navBar">
+            <div class="navLogo">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="2.5" />
+                    <line x1="7" y1="2" x2="7" y2="22" />
+                    <line x1="17" y1="2" x2="17" y2="22" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <line x1="2" y1="7" x2="7" y2="7" />
+                    <line x1="17" y1="7" x2="22" y2="7" />
+                    <line x1="2" y1="17" x2="7" y2="17" />
+                    <line x1="17" y1="17" x2="22" y2="17" />
+                </svg>
+            </div>
+            <span class="navTitle" id="title">MovieSearch</span>
+        </div>
+        <div class="navActions">
+            <button id="theme-switch" aria-label="Toggle theme">
+                <!-- Moon icon (shown in light mode) -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                    <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
+                </svg>
+                <!-- Sun icon (shown in dark mode) -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                    <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ── Hero Section ── -->
+    <section class="heroSection">
+        <!-- Animated glowing background orbs -->
+        <div class="orbsContainer">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <!-- Subtle background grid lines -->
+        <div class="bgGrid"></div>
+
+        <div class="heroContent">
+            <!-- Small pill badge above headline -->
+            <div class="heroBadge">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                    <polyline points="16 7 22 7 22 13" />
+                </svg>
+                <span>The ultimate film database</span>
+            </div>
+
+            <h1>Find Your <span class="gradientText">Next Film</span></h1>
+            <p class="heroSubtitle">Search thousands of movies, discover what's trending, and find your next favourite film.</p>
+
+            <!-- Search bar -->
+            <form class="searchBar" id="searchForm">
+                <input type="text" id="movieSearch" placeholder="Search for movies..." required>
+                <button type="submit" class="searchButton" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ── Genre Filter Row ── -->
+    <div class="genreSection">
+        <div class="genreRow" id="gr">
+            <button class="genrePill active" data-genre="All">All</button>
+            <button class="genrePill" data-genre="Action">Action</button>
+            <button class="genrePill" data-genre="Adventure">Adventure</button>
+            <button class="genrePill" data-genre="Comedy">Comedy</button>
+            <button class="genrePill" data-genre="Crime">Crime</button>
+            <button class="genrePill" data-genre="Drama">Drama</button>
+            <button class="genrePill" data-genre="Horror">Horror</button>
+            <button class="genrePill" data-genre="Music">Music</button>
+            <button class="genrePill" data-genre="Mystery">Mystery</button>
+            <button class="genrePill" data-genre="Sci-Fi">Sci-Fi</button>
+            <button class="genrePill" data-genre="Thriller">Thriller</button>
+        </div>
+    </div>
+
+    <!-- ── Movie Grid ── -->
+    <main class="mainPortion">
+        <div class="movies-container">
+            <!-- Movie cards are injected here by script.js -->
+            <!-- Example card (commented out):
+            <div class="movie-card">
+                <img class="moviePoster" src="poster.jpg" alt="Movie Poster">
+                <div class="movie-info">
+                    <h3 class="movieNameRelease">The Batman (2022)</h3>
+                </div>
+            </div> -->
+        </div>
+        <div class="buttons">
+            <button id="previousBtn" class="btn">Previous</button>
+            <button id="nextBtn" class="btn">Next</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
