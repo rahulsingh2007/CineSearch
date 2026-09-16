@@ -4,6 +4,13 @@
 
 ---
 
+## 🌐 Live Demo
+
+The project is live right now! Check it out here:
+👉 [movie-search-lemon-iota.vercel.app](https://movie-search-lemon-iota.vercel.app/)
+
+---
+
 ## About
 
 **MovieSearch** is a sleek, premium-feeling movie discovery web app built with vanilla HTML, CSS, and JavaScript. It lets users search for any film, browse trending movies, filter by genre, and view rich detail pages complete with trailers, release dates, genres, and ratings. The UI features animated hero orbs, a grid background, gradient typography, dark/light mode, and smooth hover interactions for a truly polished experience.
@@ -114,7 +121,7 @@ Movie-Search-App/
 | **Logic** | Vanilla JavaScript (ES6+, async/await, Fetch API) |
 | **Fonts** | Google Fonts — Barlow Condensed & DM Sans |
 | **API** | [TMDB (The Movie Database) API v3](https://developer.themoviedb.org/docs) |
-| **Hosting** | Static — open `index.html` directly in any browser |
+| **Hosting** | [Vercel](https://movie-search-lemon-iota.vercel.app/) / Static |
 
 ---
 
